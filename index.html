@@ -3,488 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shafia Akter | CSE Student & Software Enthusiast</title>
-    <meta name="description" content="Portfolio of Shafia Akter, a Computer Science and Engineering student passionate about software engineering and web applications.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+    <title>Shafia Akter - Portfolio</title>
     <style>
-        :root {
-            --primary: #4f46e5;
-            --primary-dark: #4338ca;
-            --secondary: #9333ea;
-            --bg: #f8fafc;
-            --card: rgba(255, 255, 255, 0.85);
-            --text: #0f172a;
-            --muted: #475569;
-            --border: #e2e8f0;
-            --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-            --radius: 16px;
-        }
-
-        body.dark {
-            --bg: #0f172a;
-            --card: rgba(30, 41, 59, 0.8);
-            --text: #f8fafc;
-            --muted: #cbd5e1;
-            --border: #334155;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            transition: background 0.3s ease, color 0.3s ease;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: min(1100px, 92%);
-            margin: auto;
-        }
-
-        /* NAVIGATION */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 999;
-            background: rgba(248, 250, 252, 0.85);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        body.dark nav {
-            background: rgba(15, 23, 42, 0.85);
-        }
-
-        .nav-container {
-            height: 70px;
+            background: linear-gradient(135deg, #e0f7fa 0%, #fffde7 100%);
+            color: #333;
             display: flex;
+            justify-content: center;
             align-items: center;
-            justify-content: space-between;
+            min-height: 100vh;
+            padding: 20px;
         }
 
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 800;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 1.8rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--muted);
-            font-size: 0.95rem;
-            font-weight: 600;
-            transition: 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .theme-btn {
-            border: 1px solid var(--border);
-            background: var(--card);
-            color: var(--text);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: 0.2s;
-        }
-
-        .theme-btn:hover {
-            transform: rotate(15deg);
-        }
-
-        .menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-            padding: 4rem 0;
-        }
-
-        .hero-content {
-            flex: 1;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            padding: 0.45rem 0.9rem;
-            border-radius: 50px;
-            background: rgba(79, 70, 229, 0.1);
-            color: var(--primary);
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            line-height: 1.1;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--muted);
-            font-weight: 600;
-            margin-bottom: 1.2rem;
+        .main-card {
+            background: rgba(255, 255, 255, 0.95);
+            width: 100%;
             max-width: 600px;
-        }
-
-        .hero-description {
-            color: var(--muted);
-            max-width: 650px;
-            margin-bottom: 2rem;
-            font-size: 1rem;
-        }
-
-        .hero-buttons {
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
             display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
         }
 
-        .btn {
-            padding: 0.8rem 1.4rem;
-            border-radius: 10px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            transition: 0.25s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(79, 70, 229, 0.35);
-        }
-
-        .btn-outline {
-            border: 1px solid var(--border);
-            color: var(--text);
-            background: var(--card);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .hero-image {
-            flex-shrink: 0;
+        header {
+            background: linear-gradient(135deg, #1e88e5 0%, #7b1fa2 100%);
+            padding: 40px 20px;
+            text-align: center;
+            color: #ffffff;
             position: relative;
         }
 
-        .hero-image::before {
-            content: "";
-            position: absolute;
-            width: 270px;
-            height: 270px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            filter: blur(50px);
-            opacity: 0.25;
-            z-index: -1;
+        .profile-img-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
         }
 
         .profile-img {
-            width: 260px;
-            height: 260px;
-            object-fit: cover;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            border: 5px solid var(--card);
-            box-shadow: var(--shadow);
+            object-fit: cover;
+            border: 4px solid #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
-        /* SECTIONS */
+        h1 {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #ffffff;
+            font-weight: 600;
+            opacity: 0.95;
+            letter-spacing: 0.3px;
+        }
+
+        .content-body {
+            padding: 30px;
+        }
+
         section {
-            padding: 4.5rem 0;
+            margin-bottom: 25px;
         }
 
-        .section-header {
-            margin-bottom: 2.5rem;
+        h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #7b1fa2;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            font-weight: 700;
         }
 
-        .section-header h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background-color: #1e88e5;
+            border-radius: 2px;
         }
 
-        .section-header p {
-            color: var(--muted);
+        p {
+            line-height: 1.7;
+            color: #444;
+            font-size: 15px;
         }
 
-        .section-line {
-            width: 45px;
-            height: 4px;
-            border-radius: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            margin-top: 0.8rem;
-        }
-
-        /* ABOUT */
-        .about-card {
-            padding: 2rem;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-
-        .about-card p {
-            color: var(--muted);
-            margin-bottom: 1rem;
-            font-size: 1.05rem;
-        }
-
-        /* HOBBIES & INTERESTS */
-        .hobbies-grid {
+        .hobby-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.8rem;
+            gap: 10px;
+            list-style: none;
         }
 
-        .hobby-tag {
-            padding: 0.7rem 1.2rem;
-            background: var(--card);
-            border: 1px solid var(--border);
+        .hobby-item {
+            background-color: #e3f2fd;
+            color: #1565c0;
+            padding: 8px 16px;
             border-radius: 30px;
-            font-size: 0.95rem;
+            font-size: 14px;
             font-weight: 600;
-            color: var(--primary);
-            transition: 0.2s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
         }
 
-        .hobby-tag:hover {
-            background: var(--primary);
-            color: white;
+        .hobby-item:hover {
+            background-color: transparent;
+            border-color: #1565c0;
             transform: translateY(-2px);
         }
 
-        /* FOOTER */
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 2rem 0;
-            text-align: center;
-            color: var(--muted);
-            font-size: 0.9rem;
+        .cv-text {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 15px;
         }
 
-        /* RESPONSIVE */
-        @media(max-width: 800px) {
-            .menu-btn { display: block; }
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: var(--bg);
-                border-bottom: 1px solid var(--border);
-                flex-direction: column;
-                padding: 1.5rem;
-            }
-            .nav-links.active { display: flex; }
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-                gap: 2rem;
-            }
-            .hero-description { margin-left: auto; margin-right: auto; }
-            .hero-buttons { justify-content: center; }
-            .hero-image img { width: 200px; height: 200px; }
-            .section-header { text-align: center; }
-            .section-line { margin-left: auto; margin-right: auto; }
-            .hobbies-grid { justify-content: center; }
+        .btn-cv {
+            display: inline-block;
+            background: linear-gradient(135deg, #1e88e5 0%, #7b1fa2 100%);
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(123, 31, 162, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-cv:hover {
+            box-shadow: 0 6px 20px rgba(123, 31, 162, 0.5);
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="container nav-container">
-            <a href="#" class="logo">Shafia.</a>
-
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about">About</a></li>
-                <li><a href="#interests">Hobbies & Interests</a></li>
-                <li><a href="#resume">Resume</a></li>
-            </ul>
-
-            <div style="display:flex; align-items:center; gap:0.7rem;">
-                <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
-                <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
-            </div>
-        </div>
-    </nav>
-
-    <main>
-        <!-- HERO -->
-        <section class="hero container">
-            <div class="hero-content">
-                <span class="hero-badge"> Welcome to my portfolio</span>
-                <h1>Hi, I'm <span class="gradient-text">Shafia Akter</span></h1>
-                <div class="hero-subtitle">Computer Science & Engineering Student</div>
-                <p class="hero-description">
-                    I am passionate about software engineering, problem solving, algorithms, and building practical technology-driven web applications.
-                </p>
-                <div class="hero-buttons">
-                    <a href="Final3148_CV.pdf" class="btn btn-primary" target="_blank">📄 Download CV</a>
-                    <a href="#about" class="btn btn-outline">Explore More ↓</a>
-                </div>
-            </div>
-
-            <div class="hero-image">
+    <div class="main-card">
+        <header>
+            <div class="profile-img-container">
                 <img src="profile.jpg" alt="Shafia Akter" class="profile-img">
             </div>
-        </section>
+            <h1>Shafia Akter</h1>
+            <p class="subtitle">Computer Science & Engineering Student</p>
+        </header>
 
-        <!-- ABOUT ME -->
-        <section id="about">
-            <div class="container">
-                <div class="section-header">
-                    <h2>About Me</h2>
-                    <p>A little background about my journey and passion.</p>
-                    <div class="section-line"></div>
-                </div>
+        <div class="content-body">
+            <section>
+                <h2>About Me</h2>
+                <p>Hello! I am a CSE student passionate about software engineering, problem solving, and building web applications.</p>
+            </section>
 
-                <div class="about-card">
-                    <p>
-                        Hello! I am a Computer Science and Engineering (CSE) student with a strong drive toward learning software design principles and problem-solving.
-                    </p>
-                    <p>
-                        My main interest lies in designing elegant solution architectures, creating interactive web applications, and constantly sharpening my skills in data structures and algorithmic efficiency.
-                    </p>
-                </div>
-            </div>
-        </section>
+            <section>
+                <h2>Hobbies & Interests</h2>
+                <ul class="hobby-list">
+                    <li class="hobby-item">Competitive Programming</li>
+                    <li class="hobby-item">Web Development</li>
+                    <li class="hobby-item">System Design</li>
+                    <li class="hobby-item">Algorithms & Data Structures</li>
+                    <li class="hobby-item">Machine Learning</li>
+                    <li class="hobby-item">Open Source Contribution</li>
+                </ul>
+            </section>
 
-        <!-- HOBBIES & INTERESTS -->
-        <section id="interests">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Hobbies & Interests</h2>
-                    <p>Things that keep me curious, engaged, and motivated.</p>
-                    <div class="section-line"></div>
-                </div>
-
-                <div class="hobbies-grid">
-                    <span class="hobby-tag">💻 Competitive Programming</span>
-                    <span class="hobby-tag">🌐 Web Development</span>
-                    <span class="hobby-tag">🏗️ System Design</span>
-                    <span class="hobby-tag">⚡ Algorithms & Data Structures</span>
-                    <span class="hobby-tag">🤖 Machine Learning</span>
-                    <span class="hobby-tag">🚀 Open Source Contribution</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- RESUME -->
-        <section id="resume">
-            <div class="container">
-                <div class="about-card" style="text-align: center; padding: 3rem 2rem;">
-                    <h2>Curriculum Vitae</h2>
-                    <p style="margin-top: 0.5rem; margin-bottom: 1.5rem;">Feel free to check out or download my complete CV for detailed technical background.</p>
-                    <a href="Final3148_CV.pdf" class="btn btn-primary" target="_blank">📄 View Full Resume (PDF)</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <p>© 2026 Shafia Akter. Built with HTML & CSS.</p>
+            <section>
+                <h2>Resume / CV</h2>
+                <p class="cv-text">Click below to view or download my latest resume:</p>
+                <a href="Final3148_CV.pdf" target="_blank" class="btn-cv">📄 Download CV (PDF)</a>
+            </section>
         </div>
-    </footer>
+    </div>
 
-    <!-- JAVASCRIPT -->
-    <script>
-        function toggleTheme() {
-            document.body.classList.toggle("dark");
-            const button = document.getElementById("themeBtn");
-            if (document.body.classList.contains("dark")) {
-                button.textContent = "☀️";
-                localStorage.setItem("theme", "dark");
-            } else {
-                button.textContent = "🌙";
-                localStorage.setItem("theme", "light");
-            }
-        }
-
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme === "dark") {
-            document.body.classList.add("dark");
-            document.getElementById("themeBtn").textContent = "☀️";
-        }
-
-        function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("active");
-        }
-
-        document.querySelectorAll(".nav-links a").forEach(link => {
-            link.addEventListener("click", () => {
-                document.getElementById("navLinks").classList.remove("active");
-            });
-        });
-    </script>
 </body>
 </html>
