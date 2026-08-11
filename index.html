@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shafia's Hub</title>
+    <title>Shafia Akter - Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,6 @@
         }
 
         body {
-            /* একটা ইউনিক, সফট গ্র্যাডিয়েন্ট ব্যাকগ্রাউন্ড */
             background: linear-gradient(135deg, #e0f7fa 0%, #fffde7 100%);
             color: #333;
             display: flex;
@@ -24,7 +23,7 @@
         }
 
         .main-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             width: 100%;
             max-width: 600px;
             border-radius: 20px;
@@ -32,15 +31,15 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            border: 1px solid rgba(255,255,255,0.5);
-            backdrop-filter: blur(5px); /* হালকা গ্লাস এফেক্ট */
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
         }
 
         header {
-            background: linear-gradient(135deg, #4A90E2 0%, #7B1FA2 100%);
+            background: linear-gradient(135deg, #1e88e5 0%, #7b1fa2 100%);
             padding: 40px 20px;
             text-align: center;
-            color: white;
+            color: #ffffff;
             position: relative;
         }
 
@@ -55,30 +54,24 @@
             height: 130px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        /* ছবির ওপরের ওই আগের নীল বৃত্ত এফেক্ট */
-        .profile-img-container::before {
-            content: '';
-            position: absolute;
-            top: -10px; left: -10px; right: -10px; bottom: -10px;
-            border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border: 4px solid #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 30px;
             font-weight: 700;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             letter-spacing: -0.5px;
+            color: #ffffff;
         }
 
         .subtitle {
-            font-size: 15px;
-            opacity: 0.9;
-            font-weight: 400;
+            font-size: 16px;
+            color: #ffffff;
+            font-weight: 600;
+            opacity: 0.95;
+            letter-spacing: 0.3px;
         }
 
         .content-body {
@@ -92,14 +85,14 @@
         h2 {
             font-size: 14px;
             text-transform: uppercase;
-            color: #7B1FA2; /* হেডার গ্র্যাডিয়েন্টের এক দিকের কালার */
+            color: #7b1fa2;
             letter-spacing: 2px;
             margin-bottom: 15px;
             position: relative;
             display: inline-block;
+            font-weight: 700;
         }
 
-        /* আন্ডারলাইন এফেক্ট */
         h2::after {
             content: '';
             position: absolute;
@@ -107,13 +100,13 @@
             left: 0;
             width: 30px;
             height: 3px;
-            background-color: #4A90E2;
+            background-color: #1e88e5;
             border-radius: 2px;
         }
 
         p {
             line-height: 1.7;
-            color: #555;
+            color: #444;
             font-size: 15px;
         }
 
@@ -126,31 +119,31 @@
 
         .hobby-item {
             background-color: #e3f2fd;
-            color: #1976d2;
+            color: #1565c0;
             padding: 8px 16px;
             border-radius: 30px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             border: 1px solid transparent;
             transition: all 0.3s ease;
         }
 
         .hobby-item:hover {
             background-color: transparent;
-            border-color: #1976d2;
+            border-color: #1565c0;
             transform: translateY(-2px);
         }
 
         .cv-text {
-            color: #666;
+            color: #555;
             font-size: 14px;
             margin-bottom: 15px;
         }
 
         .btn-cv {
             display: inline-block;
-            background: linear-gradient(135deg, #4A90E2 0%, #7B1FA2 100%);
-            color: white;
+            background: linear-gradient(135deg, #1e88e5 0%, #7b1fa2 100%);
+            color: #ffffff;
             padding: 12px 30px;
             text-decoration: none;
             border-radius: 50px;
@@ -172,9 +165,9 @@
     <div class="main-card">
         <header>
             <div class="profile-img-container">
-                <img src="profile.jpg" alt="Shafia" class="profile-img">
+                <img src="profile.jpg" alt="Shafia Akter" class="profile-img">
             </div>
-            <h1>Shafia</h1>
+            <h1>Shafia Akter</h1>
             <p class="subtitle">Computer Science & Engineering Student</p>
         </header>
 
@@ -190,6 +183,9 @@
                     <li class="hobby-item">Competitive Programming</li>
                     <li class="hobby-item">Web Development</li>
                     <li class="hobby-item">System Design</li>
+                    <li class="hobby-item">Algorithms & Data Structures</li>
+                    <li class="hobby-item">Machine Learning</li>
+                    <li class="hobby-item">Open Source Contribution</li>
                 </ul>
             </section>
 
