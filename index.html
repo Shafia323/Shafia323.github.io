@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shafia - Portfolio</title>
+    <title>Shafia's Hub</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background-color: #f4f7f6;
+            /* একটা ইউনিক, সফট গ্র্যাডিয়েন্ট ব্যাকগ্রাউন্ড */
+            background: linear-gradient(135deg, #e0f7fa 0%, #fffde7 100%);
             color: #333;
             display: flex;
             justify-content: center;
@@ -22,47 +23,66 @@
             padding: 20px;
         }
 
-        .container {
-            background: #ffffff;
+        .main-card {
+            background: rgba(255, 255, 255, 0.9);
             width: 100%;
-            max-width: 700px;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            max-width: 600px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255,255,255,0.5);
+            backdrop-filter: blur(5px); /* হালকা গ্লাস এফেক্ট */
         }
 
         header {
+            background: linear-gradient(135deg, #4A90E2 0%, #7B1FA2 100%);
+            padding: 40px 20px;
             text-align: center;
-            margin-bottom: 30px;
+            color: white;
+            position: relative;
+        }
+
+        .profile-img-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
         }
 
         .profile-img {
-            width: 140px;
-            height: 140px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #4A90E2;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            margin-bottom: 15px;
+            border: 5px solid white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ছবির ওপরের ওই আগের নীল বৃত্ত এফেক্ট */
+        .profile-img-container::before {
+            content: '';
+            position: absolute;
+            top: -10px; left: -10px; right: -10px; bottom: -10px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         h1 {
             font-size: 28px;
-            color: #2c3e50;
+            font-weight: 700;
             margin-bottom: 5px;
+            letter-spacing: -0.5px;
         }
 
         .subtitle {
-            font-size: 16px;
-            color: #7f8c8d;
-            font-weight: 500;
+            font-size: 15px;
+            opacity: 0.9;
+            font-weight: 400;
         }
 
-        hr {
-            border: none;
-            height: 1px;
-            background-color: #e2e8f0;
-            margin: 25px 0;
+        .content-body {
+            padding: 30px;
         }
 
         section {
@@ -70,93 +90,115 @@
         }
 
         h2 {
-            font-size: 18px;
-            color: #4A90E2;
+            font-size: 14px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
+            color: #7B1FA2; /* হেডার গ্র্যাডিয়েন্টের এক দিকের কালার */
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* আন্ডারলাইন এফেক্ট */
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background-color: #4A90E2;
+            border-radius: 2px;
         }
 
         p {
-            line-height: 1.6;
+            line-height: 1.7;
             color: #555;
             font-size: 15px;
         }
 
-        ul {
-            list-style-type: none;
-            padding-left: 0;
+        .hobby-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
         }
 
-        ul li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
-            color: #555;
-            font-size: 15px;
+        .hobby-item {
+            background-color: #e3f2fd;
+            color: #1976d2;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
         }
 
-        ul li::before {
-            content: "•";
-            color: #4A90E2;
-            font-weight: bold;
-            font-size: 18px;
-            position: absolute;
-            left: 0;
-            top: -2px;
+        .hobby-item:hover {
+            background-color: transparent;
+            border-color: #1976d2;
+            transform: translateY(-2px);
+        }
+
+        .cv-text {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
         }
 
         .btn-cv {
             display: inline-block;
-            background-color: #4A90E2;
-            color: #ffffff;
-            padding: 10px 20px;
+            background: linear-gradient(135deg, #4A90E2 0%, #7B1FA2 100%);
+            color: white;
+            padding: 12px 30px;
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
+            border-radius: 50px;
+            font-weight: 600;
             font-size: 14px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            margin-top: 5px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(123, 31, 162, 0.3);
+            transition: all 0.3s ease;
         }
 
         .btn-cv:hover {
-            background-color: #357ABD;
+            box-shadow: 0 6px 20px rgba(123, 31, 162, 0.5);
             transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="main-card">
         <header>
-            <img src="profile.jpg" alt="Shafia" class="profile-img">
+            <div class="profile-img-container">
+                <img src="profile.jpg" alt="Shafia" class="profile-img">
+            </div>
             <h1>Shafia</h1>
             <p class="subtitle">Computer Science & Engineering Student</p>
         </header>
 
-        <hr>
+        <div class="content-body">
+            <section>
+                <h2>About Me</h2>
+                <p>Hello! I am a CSE student passionate about software engineering, problem solving, and building web applications.</p>
+            </section>
 
-        <section>
-            <h2>About Me</h2>
-            <p>Hello! I am a CSE student passionate about software engineering, problem solving, and building web applications.</p>
-        </section>
+            <section>
+                <h2>Hobbies & Interests</h2>
+                <ul class="hobby-list">
+                    <li class="hobby-item">Competitive Programming</li>
+                    <li class="hobby-item">Web Development</li>
+                    <li class="hobby-item">System Design</li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>Hobbies & Interests</h2>
-            <ul>
-                <li>Competitive Programming</li>
-                <li>Web Development</li>
-                <li>System Design</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Resume / CV</h2>
-            <p style="margin-bottom: 10px;">Click below to view or download my latest resume:</p>
-            <a href="Final3148_CV.pdf" target="_blank" class="btn-cv">📄 Download CV (PDF)</a>
-        </section>
+            <section>
+                <h2>Resume / CV</h2>
+                <p class="cv-text">Click below to view or download my latest resume:</p>
+                <a href="Final3148_CV.pdf" target="_blank" class="btn-cv">📄 Download CV (PDF)</a>
+            </section>
+        </div>
     </div>
 
 </body>
