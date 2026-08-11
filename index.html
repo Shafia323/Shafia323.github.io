@@ -3,199 +3,1458 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shafia Akter - Portfolio</title>
+
+    <title>Shafia Akter | CSE Student & Software Developer</title>
+
+    <meta name="description"
+          content="Portfolio of Shafia Akter, a Computer Science and Engineering student passionate about software development, problem solving and technology.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
     <style>
+
+        /* =====================================================
+           ROOT VARIABLES
+        ===================================================== */
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #8b5cf6;
+
+            --bg: #f8fafc;
+            --card: rgba(255,255,255,0.8);
+
+            --text: #0f172a;
+            --muted: #64748b;
+
+            --border: #e2e8f0;
+
+            --shadow:
+                0 10px 30px rgba(15, 23, 42, 0.08);
+
+            --radius: 16px;
+        }
+
+
+        /* DARK MODE */
+
+        body.dark {
+            --bg: #0f172a;
+            --card: rgba(30,41,59,0.75);
+
+            --text: #f8fafc;
+            --muted: #94a3b8;
+
+            --border: #334155;
+
+            --shadow:
+                0 10px 30px rgba(0,0,0,0.25);
+        }
+
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            background: linear-gradient(135deg, #e0f7fa 0%, #fffde7 100%);
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background 0.3s ease,
+                        color 0.3s ease;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+
+            background: rgba(248,250,252,0.8);
+
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        body.dark nav {
+            background: rgba(15,23,42,0.8);
+        }
+
+        .nav-container {
+            height: 70px;
+
             display: flex;
-            justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            justify-content: space-between;
         }
 
-        .main-card {
-            background: rgba(255, 255, 255, 0.95);
-            width: 100%;
-            max-width: 600px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
             display: flex;
-            flex-direction: column;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(5px);
-        }
+            align-items: center;
+            gap: 1.8rem;
 
-        header {
-            background: linear-gradient(135deg, #1e88e5 0%, #7b1fa2 100%);
-            padding: 40px 20px;
-            text-align: center;
-            color: #ffffff;
-            position: relative;
-        }
-
-        .profile-img-container {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        .profile-img {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #ffffff;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        h1 {
-            font-size: 30px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-            color: #ffffff;
-        }
-
-        .subtitle {
-            font-size: 16px;
-            color: #ffffff;
-            font-weight: 600;
-            opacity: 0.95;
-            letter-spacing: 0.3px;
-        }
-
-        .content-body {
-            padding: 30px;
-        }
-
-        section {
-            margin-bottom: 25px;
-        }
-
-        h2 {
-            font-size: 14px;
-            text-transform: uppercase;
-            color: #7b1fa2;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-            font-weight: 700;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 30px;
-            height: 3px;
-            background-color: #1e88e5;
-            border-radius: 2px;
-        }
-
-        p {
-            line-height: 1.7;
-            color: #444;
-            font-size: 15px;
-        }
-
-        .hobby-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
             list-style: none;
         }
 
-        .hobby-item {
-            background-color: #e3f2fd;
-            color: #1565c0;
-            padding: 8px 16px;
-            border-radius: 30px;
-            font-size: 14px;
+        .nav-links a {
+            color: var(--muted);
+
+            font-size: 0.9rem;
             font-weight: 600;
-            border: 1px solid transparent;
-            transition: all 0.3s ease;
+
+            transition: 0.2s;
         }
 
-        .hobby-item:hover {
-            background-color: transparent;
-            border-color: #1565c0;
-            transform: translateY(-2px);
+        .nav-links a:hover {
+            color: var(--primary);
         }
 
-        .cv-text {
-            color: #555;
-            font-size: 14px;
-            margin-bottom: 15px;
+
+        /* THEME BUTTON */
+
+        .theme-btn {
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            color: var(--text);
+
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+
+            cursor: pointer;
+
+            font-size: 1rem;
+
+            transition: 0.2s;
         }
 
-        .btn-cv {
+        .theme-btn:hover {
+            transform: rotate(15deg);
+        }
+
+
+        /* MOBILE MENU */
+
+        .menu-btn {
+            display: none;
+
+            background: none;
+            border: none;
+
+            color: var(--text);
+
+            font-size: 1.5rem;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 90vh;
+
+            display: flex;
+            align-items: center;
+
+            gap: 5rem;
+
+            padding: 5rem 0;
+        }
+
+
+        .hero-content {
+            flex: 1;
+        }
+
+
+        .hero-badge {
             display: inline-block;
-            background: linear-gradient(135deg, #1e88e5 0%, #7b1fa2 100%);
-            color: #ffffff;
-            padding: 12px 30px;
-            text-decoration: none;
+
+            padding: 0.45rem 0.9rem;
+
             border-radius: 50px;
+
+            background: rgba(99,102,241,0.1);
+
+            color: var(--primary);
+
+            font-size: 0.85rem;
+
             font-weight: 600;
-            font-size: 14px;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(123, 31, 162, 0.3);
-            transition: all 0.3s ease;
+
+            margin-bottom: 1rem;
         }
 
-        .btn-cv:hover {
-            box-shadow: 0 6px 20px rgba(123, 31, 162, 0.5);
-            transform: translateY(-2px);
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+            line-height: 1.05;
+
+            font-weight: 800;
+
+            margin-bottom: 1rem;
         }
+
+
+        .gradient-text {
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+
+            color: var(--muted);
+
+            margin-bottom: 1.5rem;
+
+            max-width: 600px;
+        }
+
+
+        .hero-description {
+            color: var(--muted);
+
+            max-width: 650px;
+
+            margin-bottom: 2rem;
+        }
+
+
+        /* HERO BUTTONS */
+
+        .hero-buttons {
+            display: flex;
+
+            gap: 1rem;
+
+            flex-wrap: wrap;
+        }
+
+
+        .btn {
+            padding: 0.8rem 1.3rem;
+
+            border-radius: 9px;
+
+            font-size: 0.9rem;
+
+            font-weight: 600;
+
+            transition: 0.25s;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 0.5rem;
+        }
+
+
+        .btn-primary {
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+
+            color: white;
+
+            box-shadow:
+                0 8px 20px rgba(99,102,241,0.25);
+        }
+
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 25px rgba(99,102,241,0.35);
+        }
+
+
+        .btn-outline {
+            border: 1px solid var(--border);
+
+            color: var(--text);
+
+            background: var(--card);
+        }
+
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+
+            color: var(--primary);
+
+            transform: translateY(-3px);
+        }
+
+
+        /* HERO IMAGE */
+
+        .hero-image {
+            flex-shrink: 0;
+
+            position: relative;
+        }
+
+
+        .hero-image::before {
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+            height: 280px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+
+            filter: blur(50px);
+
+            opacity: 0.25;
+
+            z-index: -1;
+        }
+
+
+        .profile-img {
+            width: 280px;
+            height: 280px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 5px solid var(--card);
+
+            box-shadow: var(--shadow);
+        }
+
+
+        /* =====================================================
+           SECTIONS
+        ===================================================== */
+
+        section {
+            padding: 5rem 0;
+        }
+
+
+        .section-header {
+            margin-bottom: 2.5rem;
+        }
+
+
+        .section-header h2 {
+            font-size: 2rem;
+
+            font-weight: 800;
+
+            margin-bottom: 0.5rem;
+        }
+
+
+        .section-header p {
+            color: var(--muted);
+        }
+
+
+        .section-line {
+            width: 45px;
+            height: 4px;
+
+            border-radius: 5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+
+            margin-top: 0.8rem;
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about-card {
+            padding: 2rem;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .about-card p {
+            color: var(--muted);
+
+            margin-bottom: 1rem;
+        }
+
+
+        /* =====================================================
+           EDUCATION
+        ===================================================== */
+
+        .timeline {
+            position: relative;
+
+            border-left: 2px solid var(--border);
+
+            padding-left: 2rem;
+        }
+
+
+        .timeline-item {
+            position: relative;
+
+            margin-bottom: 2rem;
+
+            padding: 1.5rem;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .timeline-item::before {
+            content: "";
+
+            position: absolute;
+
+            left: -2.55rem;
+
+            top: 1.5rem;
+
+            width: 12px;
+            height: 12px;
+
+            background: var(--primary);
+
+            border-radius: 50%;
+
+            border: 3px solid var(--bg);
+        }
+
+
+        .timeline-item h3 {
+            margin-bottom: 0.3rem;
+        }
+
+
+        .timeline-item p {
+            color: var(--muted);
+        }
+
+
+        .date {
+            color: var(--primary) !important;
+
+            font-weight: 600;
+
+            font-size: 0.85rem;
+
+            margin-bottom: 0.4rem;
+        }
+
+
+        /* =====================================================
+           SKILLS
+        ===================================================== */
+
+        .skills {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 0.7rem;
+        }
+
+
+        .skill {
+            padding: 0.6rem 1rem;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 8px;
+
+            font-size: 0.85rem;
+
+            font-weight: 600;
+
+            color: var(--muted);
+
+            transition: 0.2s;
+        }
+
+
+        .skill:hover {
+            color: var(--primary);
+
+            border-color: var(--primary);
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           PROJECTS
+        ===================================================== */
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 1.5rem;
+        }
+
+
+        .project-card {
+            padding: 1.7rem;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow);
+
+            transition: 0.3s;
+        }
+
+
+        .project-card:hover {
+            transform: translateY(-7px);
+
+            border-color: rgba(99,102,241,0.5);
+        }
+
+
+        .project-icon {
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: rgba(99,102,241,0.1);
+
+            font-size: 1.3rem;
+
+            margin-bottom: 1rem;
+        }
+
+
+        .project-card h3 {
+            margin-bottom: 0.7rem;
+
+            font-size: 1.1rem;
+        }
+
+
+        .project-card p {
+            color: var(--muted);
+
+            font-size: 0.9rem;
+
+            margin-bottom: 1rem;
+        }
+
+
+        .project-tech {
+            font-size: 0.75rem;
+
+            color: var(--primary);
+
+            font-weight: 600;
+
+            margin-bottom: 1rem;
+        }
+
+
+        .project-link {
+            color: var(--primary);
+
+            font-size: 0.85rem;
+
+            font-weight: 700;
+        }
+
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact-box {
+            text-align: center;
+
+            padding: 3rem 2rem;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(99,102,241,0.08),
+                    rgba(139,92,246,0.08)
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: var(--radius);
+        }
+
+
+        .contact-box h2 {
+            font-size: 2rem;
+
+            margin-bottom: 0.8rem;
+        }
+
+
+        .contact-box p {
+            color: var(--muted);
+
+            max-width: 600px;
+
+            margin: auto auto 1.5rem;
+        }
+
+
+        .contact-links {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 1rem;
+
+            flex-wrap: wrap;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            border-top: 1px solid var(--border);
+
+            padding: 2rem 0;
+
+            text-align: center;
+
+            color: var(--muted);
+
+            font-size: 0.85rem;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media(max-width: 800px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+
+            .nav-links {
+                display: none;
+
+                position: absolute;
+
+                top: 70px;
+                left: 0;
+
+                width: 100%;
+
+                background: var(--bg);
+
+                border-bottom: 1px solid var(--border);
+
+                flex-direction: column;
+
+                padding: 1.5rem;
+            }
+
+
+            .nav-links.active {
+                display: flex;
+            }
+
+
+            .hero {
+                flex-direction: column-reverse;
+
+                text-align: center;
+
+                gap: 2rem;
+            }
+
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+
+            .hero-image img {
+                width: 220px;
+                height: 220px;
+            }
+
+
+            .section-header {
+                text-align: center;
+            }
+
+
+            .section-line {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+        }
+
+
+        @media(max-width: 500px) {
+
+            .hero {
+                padding-top: 3rem;
+            }
+
+
+            .profile-img {
+                width: 190px;
+                height: 190px;
+            }
+
+
+            section {
+                padding: 3.5rem 0;
+            }
+
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
     </style>
 </head>
+
+
 <body>
 
-    <div class="main-card">
-        <header>
-            <div class="profile-img-container">
-                <img src="profile.jpg" alt="Shafia Akter" class="profile-img">
+
+    <!-- =====================================================
+         NAVIGATION
+    ===================================================== -->
+
+    <nav>
+
+        <div class="container nav-container">
+
+            <a href="#" class="logo">
+                Shafia.
+            </a>
+
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+
+            <div style="display:flex; align-items:center; gap:0.7rem;">
+
+                <button
+                    class="theme-btn"
+                    id="themeBtn"
+                    onclick="toggleTheme()"
+                    aria-label="Toggle dark mode">
+                    🌙
+                </button>
+
+
+                <button
+                    class="menu-btn"
+                    onclick="toggleMenu()"
+                    aria-label="Open menu">
+                    ☰
+                </button>
+
             </div>
-            <h1>Shafia Akter</h1>
-            <p class="subtitle">Computer Science & Engineering Student</p>
-        </header>
 
-        <div class="content-body">
-            <section>
-                <h2>About Me</h2>
-                <p>Hello! I am a CSE student passionate about software engineering, problem solving, and building web applications.</p>
-            </section>
-
-            <section>
-                <h2>Hobbies & Interests</h2>
-                <ul class="hobby-list">
-                    <li class="hobby-item">Competitive Programming</li>
-                    <li class="hobby-item">Web Development</li>
-                    <li class="hobby-item">System Design</li>
-                    <li class="hobby-item">Algorithms & Data Structures</li>
-                    <li class="hobby-item">Machine Learning</li>
-                    <li class="hobby-item">Open Source Contribution</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Resume / CV</h2>
-                <p class="cv-text">Click below to view or download my latest resume:</p>
-                <a href="Final3148_CV.pdf" target="_blank" class="btn-cv">📄 Download CV (PDF)</a>
-            </section>
         </div>
-    </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <main>
+
+        <section class="hero container">
+
+            <div class="hero-content">
+
+                <span class="hero-badge">
+                    👋 Welcome to my portfolio
+                </span>
+
+
+                <h1>
+
+                    Hi, I'm
+                    <span class="gradient-text">
+                        Shafia Akter
+                    </span>
+
+                </h1>
+
+
+                <div class="hero-subtitle">
+
+                    Computer Science & Engineering Student
+                    • Aspiring Software Developer
+
+                </div>
+
+
+                <p class="hero-description">
+
+                    Hello! I am a CSE student passionate about software engineering,
+                    problem solving, algorithms, and building interactive web applications.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="Final3148_CV.pdf"
+                        class="btn btn-primary"
+                        target="_blank"
+                        download>
+
+                        📄 Download CV
+
+                    </a>
+
+
+                    <a
+                        href="https://github.com/shafia323"
+                        class="btn btn-outline"
+                        target="_blank">
+
+                        💻 GitHub
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="hero-image">
+
+                <img
+                    src="profile.jpg"
+                    alt="Shafia Akter"
+                    class="profile-img">
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ABOUT
+        ===================================================== -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <h2>
+                        About Me
+                    </h2>
+
+                    <p>
+                        A little about my journey and interests.
+                    </p>
+
+                    <div class="section-line"></div>
+
+                </div>
+
+
+                <div class="about-card">
+
+                    <p>
+
+                        Hello! I am a Computer Science and Engineering (CSE) student with a strong passion for software engineering, competitive programming, and problem solving.
+
+                    </p>
+
+
+                    <p>
+
+                        My main interest lies in designing elegant solution architectures, creating interactive web applications, and constantly sharpening my skills in data structures and algorithmic efficiency.
+
+                    </p>
+
+
+                    <p>
+
+                        I am eager to learn new technologies, contribute to open-source initiatives, and transform complex ideas into practical software applications through clean code.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             EDUCATION
+        ===================================================== -->
+
+        <section id="education">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <h2>
+                        Education
+                    </h2>
+
+                    <p>
+                        My academic background.
+                    </p>
+
+                    <div class="section-line"></div>
+
+                </div>
+
+
+                <div class="timeline">
+
+
+                    <div class="timeline-item">
+
+                        <p class="date">
+                            Present
+                        </p>
+
+                        <h3>
+                            B.Sc. in Computer Science and Engineering
+                        </h3>
+
+                        <p>
+                            Department of Computer Science and Engineering
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SKILLS
+        ===================================================== -->
+
+        <section id="skills">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <h2>
+                        Skills & Interests
+                    </h2>
+
+                    <p>
+                        Technologies, tools, and concepts I work with.
+                    </p>
+
+                    <div class="section-line"></div>
+
+                </div>
+
+
+                <div class="skills">
+
+                    <span class="skill">Competitive Programming</span>
+
+                    <span class="skill">Web Development</span>
+
+                    <span class="skill">System Design</span>
+
+                    <span class="skill">Algorithms & Data Structures</span>
+
+                    <span class="skill">Machine Learning</span>
+
+                    <span class="skill">Open Source Contribution</span>
+
+                    <span class="skill">C / C++</span>
+
+                    <span class="skill">Java</span>
+
+                    <span class="skill">HTML5 & CSS3</span>
+
+                    <span class="skill">JavaScript</span>
+
+                    <span class="skill">Git & GitHub</span>
+
+                    <span class="skill">Problem Solving</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PROJECTS
+        ===================================================== -->
+
+        <section id="projects">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <h2>
+                        Featured Projects
+                    </h2>
+
+                    <p>
+                        Some of the projects I have worked on.
+                    </p>
+
+                    <div class="section-line"></div>
+
+                </div>
+
+
+                <div class="projects-grid">
+
+
+                    <!-- Personal Portfolio -->
+
+                    <div class="project-card">
+
+                        <div class="project-icon">
+                            🌐
+                        </div>
+
+                        <h3>
+                            Personal Portfolio Website
+                        </h3>
+
+                        <p>
+
+                            A responsive, modern single-page portfolio website built to showcase my academic projects, skills, and background.
+
+                        </p>
+
+                        <div class="project-tech">
+
+                            HTML5 • CSS3 • JavaScript • GitHub Pages
+
+                        </div>
+
+
+                        <a
+                            href="https://github.com/shafia323/shafia323.github.io"
+                            class="project-link"
+                            target="_blank">
+
+                            View Code →
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- Algorithm Visualizer -->
+
+                    <div class="project-card">
+
+                        <div class="project-icon">
+                            💻
+                        </div>
+
+                        <h3>
+                            Algorithm Visualizer & Application
+                        </h3>
+
+                        <p>
+
+                            A project focusing on implementing advanced data structures and algorithm problem-solving techniques.
+
+                        </p>
+
+                        <div class="project-tech">
+
+                            C++ • Java • Data Structures
+
+                        </div>
+
+
+                        <a
+                            href="https://github.com/shafia323"
+                            class="project-link"
+                            target="_blank">
+
+                            View Code →
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- Database Management Project -->
+
+                    <div class="project-card">
+
+                        <div class="project-icon">
+                            🗄️
+                        </div>
+
+                        <h3>
+                            Database Management System
+                        </h3>
+
+                        <p>
+
+                            An application involving relational database design, complex query optimization, and CRUD operations.
+
+                        </p>
+
+                        <div class="project-tech">
+
+                            MySQL • Database Design • SQL
+
+                        </div>
+
+
+                        <a
+                            href="https://github.com/shafia323"
+                            class="project-link"
+                            target="_blank">
+
+                            View Code →
+
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTACT
+        ===================================================== -->
+
+        <section id="contact">
+
+            <div class="container">
+
+                <div class="contact-box">
+
+                    <h2>
+                        Let's Connect
+                    </h2>
+
+
+                    <p>
+
+                        I'm always interested in learning new technologies,
+                        collaborating on projects and exploring opportunities
+                        in software development.
+
+                    </p>
+
+
+                    <div class="contact-links">
+
+
+                        <!-- GitHub -->
+
+                        <a
+                            href="https://github.com/shafia323"
+                            class="btn btn-primary"
+                            target="_blank">
+
+                            💻 GitHub Profile
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 Shafia Akter.
+                Built with HTML & CSS.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+        /* ================= DARK MODE ================= */
+
+        function toggleTheme() {
+
+            document.body.classList.toggle("dark");
+
+            const button =
+                document.getElementById("themeBtn");
+
+            if (document.body.classList.contains("dark")) {
+
+                button.textContent = "☀️";
+
+                localStorage.setItem(
+                    "theme",
+                    "dark"
+                );
+
+            } else {
+
+                button.textContent = "🌙";
+
+                localStorage.setItem(
+                    "theme",
+                    "light"
+                );
+            }
+        }
+
+
+        /* SAVE THEME */
+
+        const savedTheme =
+            localStorage.getItem("theme");
+
+        if (savedTheme === "dark") {
+
+            document.body.classList.add("dark");
+
+            document.getElementById(
+                "themeBtn"
+            ).textContent = "☀️";
+        }
+
+
+        /* ================= MOBILE MENU ================= */
+
+        function toggleMenu() {
+
+            document
+                .getElementById("navLinks")
+                .classList.toggle("active");
+
+        }
+
+
+        /* CLOSE MOBILE MENU AFTER CLICK */
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        document
+                            .getElementById("navLinks")
+                            .classList.remove("active");
+
+                    }
+                );
+
+            });
+
+    </script>
 
 </body>
 </html>
