@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -283,13 +284,18 @@
         }
 
 
-        /* HERO BUTTONS */
+        /* HERO BUTTONS STYLING */
 
         .hero-buttons {
             display: flex;
-
+            flex-direction: column;
+            align-items: flex-start;
             gap: 1rem;
+        }
 
+        .social-row {
+            display: flex;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
@@ -797,6 +803,10 @@
 
 
             .hero-buttons {
+                align-items: center;
+            }
+
+            .social-row {
                 justify-content: center;
             }
 
@@ -958,6 +968,31 @@
 
                 <div class="hero-buttons">
 
+                    <!-- GitHub & LinkedIn line -->
+                    <div class="social-row">
+
+                        <a
+                            href="https://github.com/shafia323"
+                            class="btn btn-outline"
+                            target="_blank">
+
+                            💻 GitHub
+
+                        </a>
+
+
+                        <a
+                            href="https://www.linkedin.com/in/shafia-akter-5bb713372/"
+                            class="btn btn-outline"
+                            target="_blank">
+
+                            🔗 LinkedIn
+
+                        </a>
+
+                    </div>
+
+                    <!-- Download CV below -->
                     <a
                         href="Final3148_CV.pdf"
                         class="btn btn-primary"
@@ -965,26 +1000,6 @@
                         download>
 
                         📄 Download CV
-
-                    </a>
-
-
-                    <a
-                        href="https://github.com/shafia323"
-                        class="btn btn-outline"
-                        target="_blank">
-
-                        💻 GitHub
-
-                    </a>
-
-
-                    <a
-                        href="https://www.linkedin.com/in/shafia-akter-5bb713372/"
-                        class="btn btn-outline"
-                        target="_blank">
-
-                        🔗 LinkedIn
 
                     </a>
 
