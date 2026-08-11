@@ -3,36 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shafia - Personal Website</title>
+    <title>Shafia - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 700px;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #4A90E2;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #e2e8f0;
+            margin: 25px 0;
+        }
+
+        section {
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #4A90E2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+            font-size: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 15px;
+        }
+
+        ul li::before {
+            content: "•";
+            color: #4A90E2;
+            font-weight: bold;
+            font-size: 18px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .btn-cv {
+            display: inline-block;
+            background-color: #4A90E2;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 5px;
+        }
+
+        .btn-cv:hover {
+            background-color: #357ABD;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
-<body style="font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; background-color: #f9f9f9; color: #333;">
+<body>
 
-    <header style="text-align: center; padding: 20px;">
-        <img src="profile.jpg" alt="Profile Picture" width="150" style="border-radius: 50%;">
-        <h1>Shafia</h1>
-        <p>Computer Science & Engineering Student</p>
-    </header>
+    <div class="container">
+        <header>
+            <img src="profile.jpg" alt="Shafia" class="profile-img">
+            <h1>Shafia</h1>
+            <p class="subtitle">Computer Science & Engineering Student</p>
+        </header>
 
-    <hr style="width: 80%;">
+        <hr>
 
-    <section style="max-width: 600px; margin: auto;">
-        <h2>About Me</h2>
-        <p>Hello! I am a CSE student passionate about software engineering, problem solving, and building web applications.</p>
-    </section>
+        <section>
+            <h2>About Me</h2>
+            <p>Hello! I am a CSE student passionate about software engineering, problem solving, and building web applications.</p>
+        </section>
 
-    <section style="max-width: 600px; margin: auto;">
-        <h2>Hobbies & Interests</h2>
-        <ul>
-            <li>Competitive Programming</li>
-            <li>Web Development</li>
-            <li>System Design</li>
-        </ul>
-    </section>
+        <section>
+            <h2>Hobbies & Interests</h2>
+            <ul>
+                <li>Competitive Programming</li>
+                <li>Web Development</li>
+                <li>System Design</li>
+            </ul>
+        </section>
 
-    <section style="max-width: 600px; margin: auto;">
-        <h2>Resume / CV</h2>
-        <p>You can view or download my CV here: <a href="cv.pdf" target="_blank" style="color: #0066cc;">Download CV (PDF)</a></p>
-    </section>
+        <section>
+            <h2>Resume / CV</h2>
+            <p style="margin-bottom: 10px;">Click below to view or download my latest resume:</p>
+            <a href="Final3148_CV.pdf" target="_blank" class="btn-cv">📄 Download CV (PDF)</a>
+        </section>
+    </div>
 
 </body>
 </html>
